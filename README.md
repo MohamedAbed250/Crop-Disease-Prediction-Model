@@ -1,90 +1,147 @@
-# CropDiseasePredictor
-MAIS 202 Project
-📌 Overview
+# Crop Disease Prediction Model
 
-This project is a machine learning web application designed to support agricultural decision-making. It includes two main tools:
+A Flask-based machine learning web application for analyzing wheat field conditions and predicting whether a crop profile is healthy or unhealthy.
 
-Wheat Crop Health Predictor
-Predicts whether a wheat crop is healthy or unhealthy based on environmental and agricultural data.
-Crop Recommendation System (AI Advisor)
-Suggests the best crop to plant based on climate and soil conditions such as temperature, rainfall, humidity, and soil characteristics.
+## Overview
 
-Together, these tools help users both evaluate crop health and decide what to plant, making the system more practical and realistic.
+This project packages a trained wheat health classification model inside a simple browser interface. Users enter field measurements such as vegetation indices, soil values, weather conditions, and stress indicators, and the app returns:
 
-Features
-🌱 Predict wheat crop health (Healthy / Unhealthy)
-🌍 Recommend best crop based on environmental conditions
-🤖 Two AI systems:
-Classification (health prediction)
-Recommendation (crop selection)
-📊 Multiple ML models:
-Random Forest
-Gradient Boosting
-⚖️ Handles class imbalance
-🔍 Confidence scores for predictions
-🌐 Flask-based interactive web app
-🧠 Machine Learning Systems
-1. Wheat Crop Health Predictor
-Binary classification problem
-Input features:
-Rainfall
-Temperature
-Soil moisture
-Vegetation indices (NDVI, SAVI)
-Chlorophyll content
-etc.
-Output:
-Healthy / Unhealthy crop
-2. Crop Recommendation System
-Multi-class classification problem
-Predicts the best crop to plant
-Input features:
-Temperature
-Humidity
-Rainfall
-Soil pH
-Nutrient levels (if used)
-Output:
-Recommended crop (e.g. wheat, rice, maize, etc.)
+- a crop-health prediction
+- a confidence score
+- class probabilities
+- supporting visual summaries based on the submitted inputs
 
-👉 This acts like an AI farming advisor
+The repository also includes supporting project files, draft visuals, and additional machine learning experiments developed around agricultural decision support.
 
-🖥️ Web Application
+## Current App Focus
 
-The web app allows users to access the first tool.
+The active Flask app is centered on wheat crop health prediction. It allows users to:
 
-Pages
-/ → Homepage
-/try → input the different informations and then outputs the prediction
+- open a project landing page
+- launch the prediction form
+- enter 17 wheat-related input features
+- try built-in demo presets
+- receive a healthy or unhealthy prediction
+- view confidence, risk context, and feature-based explanation panels
 
-⚙️ Installation
+## Main Features
+
+- Flask web interface with multiple routes
+- machine learning prediction pipeline backed by saved model files
+- confidence and probability output for each prediction
+- form presets for quick testing
+- health-check endpoint for deployment verification
+- supporting visuals and exploratory project artifacts
+
+## Input Features
+
+The prediction form uses 17 input values:
+
+- Elevation Data
+- Canopy Coverage
+- NDVI
+- SAVI
+- Chlorophyll Content
+- Leaf Area Index
+- Temperature
+- Humidity
+- Rainfall
+- Wind Speed
+- Soil Moisture
+- Soil pH
+- Organic Matter
+- Water Flow
+- Weed Coverage
+- Crop Stress Indicator
+- Pest Damage
+
+## How the Prediction Works
+
+The prediction logic in `predict.py` loads saved preprocessing and model assets, transforms selected features, scales the input vector, and returns:
+
+- the predicted class
+- healthy and unhealthy probability scores
+- a confidence value based on the stronger class probability
+
+The repository contains both Random Forest and Gradient Boosting experiment files, while the app uses the saved wheat prediction pipeline exposed through the Flask interface.
+
+## Project Structure
+
+```text
+app.py                       Flask app and route handling
+predict.py                   Model loading and prediction logic
+gradient_predict.py          Additional prediction experiment file
+templates/                   HTML templates
+static/                      CSS, JavaScript, and assets
+src/                         Source data and supporting project files
+code/                        Draft visuals and exploratory artifacts
+Crop_type_advice/            Additional agricultural project materials
+wheat_rf_model.pkl           Saved Random Forest model
+wheat_scaler.pkl             Saved scaler for model inputs
+requirements.txt             Python dependencies
+```
+
+## Routes
+
+- `/` - home page
+- `/predict` - prediction form and results
+- `/try` - alternate route to the same prediction experience
+- `/health` - lightweight status check returning `{"status": "ok"}`
+
+## Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/MohamedAbed250/Crop-Disease-Prediction-Model.git
+cd Crop-Disease-Prediction-Model
 pip install -r requirements.txt
+```
+
+## Running the App
+
+Start the project with either of these commands:
+
+```bash
 flask run
+```
+
+or
+
+```bash
+python app.py
+```
 
 Then open:
 
+```text
 http://127.0.0.1:5000/
+```
 
-📦 Requirements
-flask
-pandas
-numpy
-scikit-learn
+## Requirements
 
-🔬 Future Improvements
-Integrate real-time weather APIs
-Add map-based visualization
-Use deep learning models
-Deploy online (Render / Railway)
-Add batch predictions
+The repository currently includes dependencies such as:
 
-🧠 Key Insights
-Crop health depends on multiple interacting environmental factors
-Class imbalance significantly affects model performance
-Feature transformations improve learning
-AI can assist both diagnosis (health) and decision-making (what to plant)
+- Flask
+- gunicorn
+- numpy
+- pandas
+- scikit-learn
 
-👤 Author
+## Notes
 
-Jean Eloi Lia Mohamed
-2026
+- The current web interface focuses on wheat crop health classification.
+- Some folders in the repository contain earlier supporting work and experiments beyond the active Flask workflow.
+- The project can be extended later with deployment, larger datasets, or broader crop recommendations.
+
+## Possible Improvements
+
+- deploy the app online
+- connect live agricultural or weather data sources
+- expand beyond binary wheat health prediction
+- add model comparison dashboards
+- support batch predictions from uploaded files
+
+## Author
+
+Mohamed Abed
