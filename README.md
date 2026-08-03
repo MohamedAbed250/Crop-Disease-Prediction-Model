@@ -33,6 +33,38 @@ The active Flask app is centered on wheat crop health prediction. It allows user
 - Health-check endpoint for deployment verification
 - Supporting visuals and exploratory project artifacts
 
+## Project Screenshots
+
+### Landing Page
+
+The app opens with a presentation-style overview of the wheat health predictor and the project snapshot generated from the local dataset.
+
+![Landing page](docs/images/landing-page.png)
+
+### Prediction Form
+
+Users can choose a demo preset or manually enter the wheat field measurements required by the model.
+
+![Prediction form](docs/images/prediction-form.png)
+
+### Prediction Result
+
+After submission, the interface returns the predicted class, confidence score, and risk summary.
+
+![Prediction result](docs/images/prediction-result.png)
+
+### Explainability Dashboard
+
+The result page also includes category-level alignment, influential feature drivers, and reference context derived from the project data.
+
+![Explainability dashboard](docs/images/explainability-dashboard.png)
+
+### Model Metrics Snapshot
+
+This training snapshot highlights example evaluation metrics captured during model experimentation.
+
+![Model metrics](docs/images/model-metrics.png)
+
 ## Input Features
 
 The prediction form uses 17 input values:
