@@ -59,9 +59,9 @@ The prediction form uses 17 input values:
 
 The prediction logic in `predict.py` loads saved preprocessing and model assets, transforms selected features, scales the input vector, and returns:
 
-- the predicted class
-- healthy and unhealthy probability scores
-- a confidence value based on the stronger class probability
+- The predicted class
+- Healthy and unhealthy probability scores
+- A confidence value based on the stronger class probability
 
 The repository contains both Random Forest and Gradient Boosting experiment files, while the app uses the saved wheat prediction pipeline exposed through the Flask interface.
 
@@ -155,11 +155,11 @@ The repository currently includes dependencies such as:
 
 ## Possible Improvements
 
-- deploy the app online
-- connect live agricultural or weather data sources
-- expand beyond binary wheat health prediction
-- add model comparison dashboards
-- support batch predictions from uploaded files
+- Deploy the app online
+- Connect live agricultural or weather data sources
+- Expand beyond binary wheat health prediction
+- Add model comparison dashboards
+- Support batch predictions from uploaded files
 
 ## Author
 
