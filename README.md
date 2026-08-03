@@ -59,12 +59,6 @@ The result page also includes category-level alignment, influential feature driv
 
 ![Explainability dashboard](docs/images/explainability-dashboard.png)
 
-### Model Metrics Snapshot
-
-This training snapshot highlights example evaluation metrics captured during model experimentation.
-
-![Model metrics](docs/images/model-metrics.png)
-
 ## Input Features
 
 The prediction form uses 17 input values:
