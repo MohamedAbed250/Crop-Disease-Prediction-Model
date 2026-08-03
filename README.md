@@ -98,6 +98,17 @@ cd Crop-Disease-Prediction-Model
 pip install -r requirements.txt
 ```
 
+## Quick Start
+
+This app does not open by itself from GitHub. You need to run the project locally first so the Flask server starts.
+
+The simplest flow is:
+
+1. Open a terminal in the project folder.
+2. Start the app with one of the commands below.
+3. Wait for Flask to start on port `5000`.
+4. Open `http://127.0.0.1:5000/` in your browser.
+
 ## Running the App
 
 Start the project with either of these commands:
@@ -111,6 +122,14 @@ or
 ```bash
 python app.py
 ```
+
+On Windows, the repository also includes:
+
+```bat
+run_app.cmd
+```
+
+That script starts `app.py` using the Python interpreter inside `venv\Scripts\python.exe`.
 
 Then open:
 
