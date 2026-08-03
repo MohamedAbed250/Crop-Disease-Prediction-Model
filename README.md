@@ -144,4 +144,4 @@ The repository currently includes dependencies such as:
 
 ## Author
 
-Mohamed Abed
+Jean Eloi Lia Mohamed
