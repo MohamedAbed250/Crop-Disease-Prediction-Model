@@ -6,10 +6,10 @@ A Flask-based machine learning web application for analyzing wheat field conditi
 
 This project packages a trained wheat health classification model inside a simple browser interface. Users enter field measurements such as vegetation indices, soil values, weather conditions, and stress indicators, and the app returns:
 
-- a crop-health prediction
-- a confidence score
-- class probabilities
-- supporting visual summaries based on the submitted inputs
+- Crop-health prediction
+- Confidence score
+- Class probabilities
+- Supporting visual summaries based on the submitted inputs
 
 The repository also includes supporting project files, draft visuals, and additional machine learning experiments developed around agricultural decision support.
 
@@ -17,21 +17,21 @@ The repository also includes supporting project files, draft visuals, and additi
 
 The active Flask app is centered on wheat crop health prediction. It allows users to:
 
-- open a project landing page
-- launch the prediction form
-- enter 17 wheat-related input features
-- try built-in demo presets
-- receive a healthy or unhealthy prediction
-- view confidence, risk context, and feature-based explanation panels
+- Open a project landing page
+- Launch the prediction form
+- Enter 17 wheat-related input features
+- Try built-in demo presets
+- Receive a healthy or unhealthy prediction
+- View confidence, risk context, and feature-based explanation panels
 
 ## Main Features
 
 - Flask web interface with multiple routes
-- machine learning prediction pipeline backed by saved model files
-- confidence and probability output for each prediction
-- form presets for quick testing
-- health-check endpoint for deployment verification
-- supporting visuals and exploratory project artifacts
+- Machine learning prediction pipeline backed by saved model files
+- Confidence and probability output for each prediction
+- Form presets for quick testing
+- Health-check endpoint for deployment verification
+- Supporting visuals and exploratory project artifacts
 
 ## Input Features
 
